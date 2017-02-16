@@ -3,6 +3,15 @@ PackratVersion: 0.4.8.1
 RVersion: 3.3.2
 Repos: CRAN=https://cran.rstudio.com/
 
+Package: BH
+Source: CRAN
+Version: 1.62.0-1
+
+Package: DBI
+Source: CRAN
+Version: 0.5-1
+Hash: 375869004db963f9915f2b8a49b4a718
+
 Package: MatrixModels
 Source: CRAN
 Version: 0.4-1
@@ -11,13 +20,19 @@ Hash: 60a5c75e57aae4a0ce76cb7422939aaf
 Package: ModelMetrics
 Source: CRAN
 Version: 1.1.0
-Hash: 26a75216d50f787ebb12bc3552762837
 Requires: Rcpp
+Hash: 26a75216d50f787ebb12bc3552762837
 
 Package: RColorBrewer
 Source: CRAN
 Version: 1.1-2
 Hash: c0d56cd15034f395874c870141870c25
+
+Package: RSQLite
+Source: CRAN
+Version: 1.1-2
+Requires: BH, DBI, Rcpp, memoise, plogr
+Hash: d656a11a73469795ac3e5823ecfa4757
 
 Package: Rcpp
 Source: CRAN
@@ -28,6 +43,7 @@ Package: RcppEigen
 Source: CRAN
 Version: 0.3.2.9.0
 Requires: Rcpp
+Hash: 3f0a2179e872b4e0eddfb747b289b7be
 
 Package: SparseM
 Source: CRAN
@@ -42,14 +58,14 @@ Hash: 0afb92b59b02593c70ff8046700ba9d3
 Package: car
 Source: CRAN
 Version: 2.1-4
-Hash: d8cc2f66d4ba0c91312f1c1c5773d502
 Requires: pbkrtest, quantreg
+Hash: d8cc2f66d4ba0c91312f1c1c5773d502
 
 Package: caret
 Source: CRAN
 Version: 6.0-73
-Hash: b4b1006c635b016d1e33a98789e228ba
 Requires: ModelMetrics, car, foreach, ggplot2, plyr, reshape2
+Hash: b4b1006c635b016d1e33a98789e228ba
 
 Package: colorspace
 Source: CRAN
@@ -69,14 +85,14 @@ Hash: e53fb8c58673df868183697e39a6a4d6
 Package: foreach
 Source: CRAN
 Version: 1.4.3
-Hash: cd53ef4cf29dc59ce3f8c5c1af735fd1
 Requires: iterators
+Hash: cd53ef4cf29dc59ce3f8c5c1af735fd1
 
 Package: ggplot2
 Source: CRAN
 Version: 2.2.1
-Hash: 46e5cb78836848aa44655e577433f54b
 Requires: digest, gtable, lazyeval, plyr, reshape2, scales, tibble
+Hash: 46e5cb78836848aa44655e577433f54b
 
 Package: gtable
 Source: CRAN
@@ -101,25 +117,31 @@ Hash: 3d6e7608e65bbf5cb170dab1e3c9ed8b
 Package: lme4
 Source: CRAN
 Version: 1.1-12
-Hash: d306e239f525642f2e0d83433e811bd7
 Requires: Rcpp, RcppEigen, minqa, nloptr
+Hash: d306e239f525642f2e0d83433e811bd7
 
 Package: magrittr
 Source: CRAN
 Version: 1.5
 Hash: bdc4d48c3135e8f3b399536ddf160df4
 
+Package: memoise
+Source: CRAN
+Version: 1.0.0
+Requires: digest
+Hash: 56e7087c3559eb7ba72a9afb349bf896
+
 Package: minqa
 Source: CRAN
 Version: 1.2.4
-Hash: c6589c93323b465a07618bae6f6ec7ed
 Requires: Rcpp
+Hash: c6589c93323b465a07618bae6f6ec7ed
 
 Package: munsell
 Source: CRAN
 Version: 0.4.3
-Hash: f96d896947fcaf9b6d0074002e9f4f9d
 Requires: colorspace
+Hash: f96d896947fcaf9b6d0074002e9f4f9d
 
 Package: nloptr
 Source: CRAN
@@ -134,32 +156,36 @@ Hash: 6ad605ba7b4b476d84be6632393f5765
 Package: pbkrtest
 Source: CRAN
 Version: 0.4-6
-Hash: 8117c37e2e3078e3c6465134bac6956e
 Requires: lme4
+Hash: 8117c37e2e3078e3c6465134bac6956e
+
+Package: plogr
+Source: CRAN
+Version: 0.1-1
 
 Package: plyr
 Source: CRAN
 Version: 1.8.4
-Hash: ce3897d2ea6dabdb2c0a217b25f5fe99
 Requires: Rcpp
+Hash: ce3897d2ea6dabdb2c0a217b25f5fe99
 
 Package: quantreg
 Source: CRAN
 Version: 5.29
-Hash: a06b5a1adfd5068a49e8e960b884d08e
 Requires: MatrixModels, SparseM
+Hash: a06b5a1adfd5068a49e8e960b884d08e
 
 Package: reshape2
 Source: CRAN
 Version: 1.4.2
-Hash: 85d9947f8a5e187dff7f18265b96cb13
 Requires: Rcpp, plyr, stringr
+Hash: 85d9947f8a5e187dff7f18265b96cb13
 
 Package: scales
 Source: CRAN
 Version: 0.4.1
-Hash: bc8d2233a63b068b0f60b18303d60c55
 Requires: RColorBrewer, Rcpp, dichromat, labeling, munsell, plyr
+Hash: bc8d2233a63b068b0f60b18303d60c55
 
 Package: stringi
 Source: CRAN
@@ -169,11 +195,11 @@ Hash: 1ad6b1cc11d982ac233bf2fa2f7c9684
 Package: stringr
 Source: CRAN
 Version: 1.1.0
-Hash: 4d21d0063b37a17ea18eaec6acd29bf3
 Requires: magrittr, stringi
+Hash: 4d21d0063b37a17ea18eaec6acd29bf3
 
 Package: tibble
 Source: CRAN
 Version: 1.2
-Hash: 3857905737a164648031462bed6aa2ef
 Requires: Rcpp, assertthat, lazyeval
+Hash: 3857905737a164648031462bed6aa2ef
